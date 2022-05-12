@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Генерация пароля
+{% endblock %}
+
+{% block content %}
+    <h1>Генерация пароля</h1>
+<form action="{% url 'password' %}">
+    <select name="length">
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10" selected="selected">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+    </select>
+    <br><input type="checkbox" name="digit">Включая цифры
+    <br><input type="checkbox" name="upper">Включая заглавные буквы
+    <br><input type="checkbox" name="special">Включая спец символы
+    <br>
+    <input type="submit" value="Сгенерировать" class="btn btn-info  " >
+</form>
+
+<a href="{% url 'manual' %}">На страницу руководства.</a>
+
+{% endblock %}
